@@ -15,6 +15,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import cl.mobdev.democomposeandrea.viewmodel.CourseViewModel
+import coil.compose.AsyncImage
 
 @Composable
 fun DetailScreen(navController: NavController){
@@ -39,7 +40,7 @@ fun SecondBodyContent(navController: NavController){
 
     Column() {
         if (course != null) {
-            Image(painter = painterResource(course.image!!.toInt()), contentDescription = "")
+            AsyncImage(model = course.image, contentDescription = "")
             Text(course.title!!, style = MaterialTheme.typography.h1)
             Text(course.description!!, style = MaterialTheme.typography.h2)
             Text(course.start!!, style = MaterialTheme.typography.h3)
